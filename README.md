@@ -1,5 +1,5 @@
 # Car-Price-Prediction-poc
-Here I have developed the model using random forest regression algorithm to predict the price of the cars.
+Here I have developed and deployed(https://carspricepredictionmodel.herokuapp.com/) the model using random forest regression algorithm to predict the price of the cars.
 
 # What I have taken care
 
