@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: carprice-prediction
+  labels:
+    app: carprice-prediction
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: carprice-prediction
+  template:
+    metadata:
+      labels:
+        app: carprice-prediction
+    spec:
+      containers:
+        - name: my-container
+          image: shivu-app:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          env:
+            - name: PORT
+              value: "8080"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: carprice-prediction
+  labels:
+    app: carprice-prediction
+spec:
+  ports:
+    - name: carprice-prediction
+      port: 8080
+      targetPort: 8080
+  selector:
+    app: carprice-prediction
