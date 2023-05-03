@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
         - name: my-container
-          image: shivu-app:latest
-          imagePullPolicy: Never
+          image: 203545398842.dkr.ecr.us-east-1.amazonaws.com/carspriceprediction:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           env:
